@@ -29,18 +29,18 @@ export class AddTaskComponent implements OnInit {
   onSubmit(): void {
     if (!this.text || !this.day) {
       alert('Please fill in both fields.');
+    } else {
+      const newTask = {
+        text: this.text,
+        day: this.day,
+        reminder: this.reminder,
+      };
+
+      this.onAddTask.emit(newTask);
+
+      this.text = '';
+      this.day = '';
+      this.reminder = false;
     }
-
-    const newTask = {
-      text: this.text,
-      day: this.day,
-      reminder: this.reminder,
-    };
-
-    this.onAddTask.emit(newTask);
-
-    this.text = '';
-    this.day = '';
-    this.reminder = false;
   }
 }

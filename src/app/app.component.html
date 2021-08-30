@@ -1,4 +1,14 @@
 <div class="container">
   <app-header></app-header>
-  <app-tasks></app-tasks>
+  <router-outlet></router-outlet>
+  <footer
+    [ngStyle]="{
+      textAlign: 'center',
+      margin: '40px auto 0',
+      borderTop: '1px solid #bbbbbb',
+      padding: '20px 0'
+    }"
+  >
+    <a routerLink="/about">About</a>
+  </footer>
 </div>
